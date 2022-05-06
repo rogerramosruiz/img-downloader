@@ -42,7 +42,6 @@ def main(words, numberImages, dir):
 
 if __name__ == '__main__':
     words = ['house indoor', 'street', 'parks']
-    words = ['parks']
-    numberImages = 1501
+    numberImages = 1550
     dir = 'downloads'
     main(words, numberImages, dir)

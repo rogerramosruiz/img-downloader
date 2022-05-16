@@ -5,7 +5,8 @@ import concurrent.futures
 
 def checkDownloadedFile(path):
     try:
-        Image.open(path)
+        img = Image.open(path)
+        img.verify()
     except Exception:
         print(f'corrupted file {path}')
 

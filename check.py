@@ -4,6 +4,9 @@ from PIL import Image
 import concurrent.futures
 
 def checkDownloadedFile(path):
+    """
+    Check if there is a corrupted image
+    """
     try:
         img = Image.open(path)
         img.verify()

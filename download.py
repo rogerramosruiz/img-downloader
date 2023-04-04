@@ -65,8 +65,3 @@ def check_downloaded(dir, urls):
         if b:
             not_downloaded.append(url)
     return not_downloaded
-
-if __name__ == '__main__':
-    url = 'https://images.unsplash.com/photo-1505322022379-7c3353ee6291?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=guille-pozzi-SHcHVFhz7-M-unsplash.jpg'
-    name = get_file_name(url)
-    print(name)

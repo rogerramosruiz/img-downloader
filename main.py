@@ -2,7 +2,7 @@ import requests
 import os
 from download import download
 import concurrent.futures
-
+from check import check
 def get_urls(word:str, number_images:int):
     """
     word: Word to be searched
@@ -50,9 +50,11 @@ def main(words, number_images, dir):
         download_dir = [f'{dir}/{word}'] * len(urls)
         with concurrent.futures.ThreadPoolExecutor() as executor:
             executor.map(download, urls, download_dir)
+    # check for corrupted images
+    check(dir)
 
 if __name__ == '__main__':
     words = ['house indoor', 'street', 'parks']
-    number_images = 5
+    number_images = 1
     dir = 'downloads'
     main(words, number_images, dir)
